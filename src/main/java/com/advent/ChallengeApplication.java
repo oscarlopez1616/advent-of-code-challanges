@@ -1,4 +1,4 @@
-package com.advent.challenge;
+package com.advent;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ChallengeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ChallengeApplication.class, args);
+		SpringApplication.run(ChallengeApplication.class, args).close();
 	}
 
 }
