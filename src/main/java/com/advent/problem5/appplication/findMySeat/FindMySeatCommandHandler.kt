@@ -21,8 +21,10 @@ open class FindMySeatCommandHandler(
             seatsVOList.add(decoderService.handle(codifiedSeat))
         }
 
-        seatsVOList.sortByDescending { it.getSeatCode() }
+        val seatsList = seatsVOList.map { it.getSeatCode() }
 
-        return SeatDTO.toDTO(seatsVOList.get(0))
+        val completeList = IntRange(seatsList.minOrNull()!!,seatsList.maxOrNull()!!)
+
+        return SeatDTO(completeList.subtract(seatsList).first())
     }
 }
